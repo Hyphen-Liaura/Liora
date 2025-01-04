@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev:frontend": "vite dev",
+		"dev:frontend": "vite dev --open",
 		"dev:emulate": "firebase emulators:start",
 		"dev:functions": "cd functions && npm run build:watch",
 		"dev": "run-p dev:frontend dev:emulate dev:functions",

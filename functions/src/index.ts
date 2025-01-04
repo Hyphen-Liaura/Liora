@@ -16,6 +16,8 @@ export const chat = onCall(
 		const nodeEnv = NODE_ENV.value();
 
 		if (nodeEnv === 'development') {
+			await new Promise((resolve) => setTimeout(resolve, 2000));
+
 			return 'Some dummy text';
 		}
 

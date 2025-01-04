@@ -5,9 +5,33 @@
 	import { Spring } from 'svelte/motion';
 	import type { MessageI } from '../../routes/+page.svelte';
 
-	const { message, role }: { message: string; role: MessageI['role'] } = $props();
+	const {
+		message,
+		role,
+		loading,
+		className
+	}: { message: string; role: MessageI['role']; loading?: boolean; className?: string } = $props();
 
 	const opacity = new Spring(0);
+
+	let loadingText = $state(message.split('')[0] ?? '');
+	let loadingTextInterval: NodeJS.Timeout | undefined;
+
+	$effect(() => {
+		if (loading) {
+			loadingTextInterval = setInterval(() => {
+				if (loadingText.length === message.length) {
+					loadingText = '';
+				}
+
+				loadingText = loadingText + (message.split('')[loadingText.length] ?? '');
+			}, 1000);
+		}
+
+		return () => {
+			clearInterval(loadingTextInterval);
+		};
+	});
 
 	onMount(() => {
 		opacity.target = 1;
@@ -19,10 +43,16 @@
 	class={cn(
 		'w-fit max-w-[80%] rounded-lg px-4 py-3 font-bold',
 		role === 'assistant' && 'background self-start text-left',
-		role === 'user' && 'self-end bg-neutral-100 text-right'
+		role === 'user' && 'self-end bg-neutral-100 text-right',
+		loading && 'animate-pulse',
+		className
 	)}
 >
-	<P>{message}</P>
+	{#if loading}
+		<pre>{loadingText}</pre>
+	{:else}
+		<P>{message}</P>
+	{/if}
 </div>
 
 <style>

@@ -58,6 +58,8 @@
 			return;
 		}
 
+		submitting = true;
+
 		try {
 			messages.push({
 				role: 'user',
@@ -89,6 +91,8 @@
 		} catch (err) {
 			console.error(err);
 		}
+
+		submitting = false;
 
 		// Focus the input
 		focusInput();
@@ -139,6 +143,10 @@
 					{#each messages as message}
 						<Message message={message.content} role={message.role} />
 					{/each}
+
+					{#if submitting}
+						<Message message="..." role="assistant" loading className="w-[3.75rem]" />
+					{/if}
 				</div>
 
 				<div class="grid grid-cols-[1fr_auto] gap-x-2">
