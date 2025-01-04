@@ -40,7 +40,6 @@
 	};
 
 	const sendMessage = async () => {
-		console.log('43:+page.svelte: import.meta.env.NODE_ENV ~', import.meta.env.PROD);
 		if ($hitLimit && import.meta.env.PROD) {
 			error = 'You have reached the message limit.';
 			focusInput();
@@ -52,7 +51,7 @@
 			return;
 		}
 
-		if (messages.length > 20) {
+		if (messages.length > 50) {
 			error = 'You have reached the message limit.';
 			hitLimit?.set(true);
 			focusInput();

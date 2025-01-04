@@ -20,8 +20,6 @@ export const chat = onCall(async (request) => {
 
 	const updatedMessages = request.data.messages as MessageI[];
 
-	console.log(updatedMessages);
-
 	const thread = await client.beta.threads.create({
 		messages: updatedMessages.slice(0, -1)
 	});
@@ -38,8 +36,6 @@ export const chat = onCall(async (request) => {
 	if (run.status === 'completed') {
 		const messages = await client.beta.threads.messages.list(run.thread_id);
 		const latestMessage = messages.data[0].content[0];
-
-		console.log(JSON.stringify(messages, null, 2));
 
 		if (latestMessage.type === 'text') {
 			return latestMessage.text.value;
