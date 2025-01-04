@@ -119,7 +119,7 @@
 		<a href="https://x.com/AgentLiora" target="_blank">
 			<img src="/twitter.png" alt="X" class="h-8 w-auto md:h-16" />
 		</a>
-		<a href="" target="_blank">
+		<a href="https://pump.fun/" target="_blank">
 			<img src="/pump.png" alt="Pump" class="h-8 w-auto md:h-16" />
 		</a>
 	</div>
