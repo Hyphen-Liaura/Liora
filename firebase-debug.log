@@ -1,0 +1,683 @@
+[debug] [2025-01-04T02:42:43.831Z] ----------------------------------------------------------------------
+[debug] [2025-01-04T02:42:43.832Z] Command:       /home/ben/.nvm/versions/node/v20.17.0/bin/node /home/ben/.nvm/versions/node/v20.17.0/bin/firebase deploy --only functions
+[debug] [2025-01-04T02:42:43.832Z] CLI Version:   13.18.0
+[debug] [2025-01-04T02:42:43.833Z] Platform:      linux
+[debug] [2025-01-04T02:42:43.833Z] Node Version:  v20.17.0
+[debug] [2025-01-04T02:42:43.833Z] Time:          Sat Jan 04 2025 02:42:43 GMT+0000 (Greenwich Mean Time)
+[debug] [2025-01-04T02:42:43.833Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-04T02:42:43.873Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-04T02:42:43.873Z] > authorizing via signed-in user (brunyeeb@gmail.com)
+[debug] [2025-01-04T02:42:43.873Z] [iam] checking project therapy-bot-6dad7 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-01-04T02:42:43.874Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions [none]
+[debug] [2025-01-04T02:42:43.874Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:42:43.875Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-01-04T02:42:44.058Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions 200
+[debug] [2025-01-04T02:42:44.059Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-01-04T02:42:44.059Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-01-04T02:42:44.059Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-01-04T02:42:44.650Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-01-04T02:42:44.650Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'therapy-bot-6dad7'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2025-01-04T02:42:47.171Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 [none]
+[debug] [2025-01-04T02:42:47.381Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 200
+[debug] [2025-01-04T02:42:47.381Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 {"projectId":"therapy-bot-6dad7","projectNumber":"1045420805272","displayName":"therapy-bot","name":"projects/therapy-bot-6dad7","resources":{"hostingSite":"therapy-bot-6dad7"},"state":"ACTIVE","etag":"1_76ac9ce2-a710-40ae-9191-62ab01989519"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-01-04T02:42:47.382Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-01-04T02:42:47.382Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:42:47.383Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-01-04T02:42:47.383Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:42:47.384Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com [none]
+[debug] [2025-01-04T02:42:47.384Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:42:47.384Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com [none]
+[debug] [2025-01-04T02:42:47.384Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:42:48.150Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com 200
+[debug] [2025-01-04T02:42:48.150Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-01-04T02:42:48.151Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com 200
+[debug] [2025-01-04T02:42:48.151Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com [omitted]
+[warn] ⚠  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2025-01-04T02:42:48.151Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2025-01-04T02:42:48.151Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com:enable x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:42:48.153Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com 200
+[debug] [2025-01-04T02:42:48.153Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-01-04T02:42:48.173Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com 200
+[debug] [2025-01-04T02:42:48.174Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com [omitted]
+[warn] ⚠  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2025-01-04T02:42:48.174Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2025-01-04T02:42:48.174Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com:enable x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:42:48.747Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com:enable 200
+[debug] [2025-01-04T02:42:48.747Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com:enable [omitted]
+[debug] [2025-01-04T02:42:49.630Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com:enable 200
+[debug] [2025-01-04T02:42:49.630Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com:enable [omitted]
+[debug] [2025-01-04T02:42:58.752Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com [none]
+[debug] [2025-01-04T02:42:58.752Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:42:59.542Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com 200
+[debug] [2025-01-04T02:42:59.543Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2025-01-04T02:42:59.631Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com [none]
+[debug] [2025-01-04T02:42:59.631Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:43:00.209Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com 200
+[debug] [2025-01-04T02:43:00.210Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2025-01-04T02:43:00.210Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7/adminSdkConfig [none]
+[debug] [2025-01-04T02:43:00.392Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7/adminSdkConfig 200
+[debug] [2025-01-04T02:43:00.392Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7/adminSdkConfig {"projectId":"therapy-bot-6dad7","storageBucket":"therapy-bot-6dad7.firebasestorage.app"}
+[debug] [2025-01-04T02:43:00.393Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/therapy-bot-6dad7/configs [none]
+[debug] [2025-01-04T02:43:00.636Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/therapy-bot-6dad7/configs 200
+[debug] [2025-01-04T02:43:00.636Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/therapy-bot-6dad7/configs {}
+[debug] [2025-01-04T02:43:00.637Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-01-04T02:43:01.413Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0",
+    "openai": "^4.77.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2025-01-04T02:43:01.413Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-01-04T02:43:01.414Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-01-04T02:43:01.417Z] Found firebase-functions binary at '/home/ben/projects/ai-therapy/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8295
+
+[debug] [2025-01-04T02:43:01.574Z] Got response from /__/functions.yaml {"endpoints":{"chat":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"chat"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{},"params":[{"name":"OPENAI_API_KEY","type":"string"},{"name":"NODE_ENV","type":"string"}]}
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /home/ben/projects/ai-therapy/functions (204.76 KB) for uploading 
+[debug] [2025-01-04T02:43:06.621Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/therapy-bot-6dad7/locations/-/functions [none]
+[debug] [2025-01-04T02:43:07.165Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/therapy-bot-6dad7/locations/-/functions 200
+[debug] [2025-01-04T02:43:07.165Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/therapy-bot-6dad7/locations/-/functions {}
+[debug] [2025-01-04T02:43:07.166Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2025-01-04T02:43:08.071Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/-/functions 200
+[debug] [2025-01-04T02:43:08.071Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/-/functions {}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2025-01-04T02:43:08.073Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com [none]
+[debug] [2025-01-04T02:43:08.073Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:43:08.074Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com [none]
+[debug] [2025-01-04T02:43:08.074Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:43:08.075Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/pubsub.googleapis.com [none]
+[debug] [2025-01-04T02:43:08.075Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/pubsub.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:43:08.076Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/storage.googleapis.com [none]
+[debug] [2025-01-04T02:43:08.076Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/storage.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:43:08.808Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com 200
+[debug] [2025-01-04T02:43:08.808Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com [omitted]
+[warn] ⚠  functions: missing required API eventarc.googleapis.com. Enabling now... 
+[debug] [2025-01-04T02:43:08.808Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com:enable [none]
+[debug] [2025-01-04T02:43:08.808Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com:enable x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:43:08.815Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/pubsub.googleapis.com 200
+[debug] [2025-01-04T02:43:08.815Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/pubsub.googleapis.com [omitted]
+[info] ✔  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2025-01-04T02:43:08.818Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com 200
+[debug] [2025-01-04T02:43:08.818Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com [omitted]
+[warn] ⚠  functions: missing required API run.googleapis.com. Enabling now... 
+[debug] [2025-01-04T02:43:08.818Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com:enable [none]
+[debug] [2025-01-04T02:43:08.818Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com:enable x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:43:08.825Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/storage.googleapis.com 200
+[debug] [2025-01-04T02:43:08.825Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/storage.googleapis.com [omitted]
+[info] ✔  functions: required API storage.googleapis.com is enabled 
+[debug] [2025-01-04T02:43:10.068Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com:enable 200
+[debug] [2025-01-04T02:43:10.068Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com:enable [omitted]
+[debug] [2025-01-04T02:43:10.118Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com:enable 200
+[debug] [2025-01-04T02:43:10.118Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com:enable [omitted]
+[debug] [2025-01-04T02:43:20.071Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com [none]
+[debug] [2025-01-04T02:43:20.071Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:43:20.119Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com [none]
+[debug] [2025-01-04T02:43:20.119Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:43:20.817Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com 200
+[debug] [2025-01-04T02:43:20.817Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com [omitted]
+[info] ✔  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2025-01-04T02:43:20.859Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com 200
+[debug] [2025-01-04T02:43:20.859Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com [omitted]
+[info] ✔  functions: required API run.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2025-01-04T02:43:20.859Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2025-01-04T02:43:20.860Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2025-01-04T02:43:21.796Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2025-01-04T02:43:21.797Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-1045420805272@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"117875806513462077794"}}
+[debug] [2025-01-04T02:43:21.864Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2025-01-04T02:43:21.864Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-1045420805272@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"111899996285342541934"}}
+[debug] [2025-01-04T02:43:21.865Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 [none]
+[debug] [2025-01-04T02:43:22.047Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 200
+[debug] [2025-01-04T02:43:22.047Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 {"projectId":"therapy-bot-6dad7","projectNumber":"1045420805272","displayName":"therapy-bot","name":"projects/therapy-bot-6dad7","resources":{"hostingSite":"therapy-bot-6dad7"},"state":"ACTIVE","etag":"1_76ac9ce2-a710-40ae-9191-62ab01989519"}
+[debug] [2025-01-04T02:43:22.048Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2025-01-04T02:43:23.986Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2025-01-04T02:43:23.986Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com/59047b4e-5051-4221-a123-c0d2683278f3.zip?GoogleAccessId=service-1045420805272@gcf-admin-robot.iam.gserviceaccount.com&Expires=1735960407&Signature=BCOKZfACG6dbNxiWaSkipSdKgL5DwiW4GSvdpDq9IN1P6GW1YfKy2coQuABGZ1XYLTOZuBAVT8IpM35NLpVOOzif5FuovZKMEhG%2FGghPwVjWFndobQTCl9qSrSaSHbGvHSuKH0LfYmaZywgFrxpsXDvB60gIQ4AYqh5tGVtKg4%2B%2Fk7TNxTTCCqdsd0DO5qaJ96qqBJkV0V5LHMIeulYna5B6NXva0Ny9HN7JkWgtDaxv8Z9LrdedbqjAkbxDRJiQZMvrESgbvl1z4S7F%2BrXhICQWsfa5cT8AIXAZZlMuDiCWqNgqA4ifIxUp1pcVaGYcKA7kfitzVGU6AG4vZ5cPNA%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com","object":"59047b4e-5051-4221-a123-c0d2683278f3.zip"}}
+[debug] [2025-01-04T02:43:23.987Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com/59047b4e-5051-4221-a123-c0d2683278f3.zip GoogleAccessId=service-1045420805272%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1735960407&Signature=BCOKZfACG6dbNxiWaSkipSdKgL5DwiW4GSvdpDq9IN1P6GW1YfKy2coQuABGZ1XYLTOZuBAVT8IpM35NLpVOOzif5FuovZKMEhG%2FGghPwVjWFndobQTCl9qSrSaSHbGvHSuKH0LfYmaZywgFrxpsXDvB60gIQ4AYqh5tGVtKg4%2B%2Fk7TNxTTCCqdsd0DO5qaJ96qqBJkV0V5LHMIeulYna5B6NXva0Ny9HN7JkWgtDaxv8Z9LrdedbqjAkbxDRJiQZMvrESgbvl1z4S7F%2BrXhICQWsfa5cT8AIXAZZlMuDiCWqNgqA4ifIxUp1pcVaGYcKA7kfitzVGU6AG4vZ5cPNA%3D%3D
+[debug] [2025-01-04T02:43:23.987Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com/59047b4e-5051-4221-a123-c0d2683278f3.zip [stream]
+[debug] [2025-01-04T02:43:24.761Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com/59047b4e-5051-4221-a123-c0d2683278f3.zip 200
+[debug] [2025-01-04T02:43:24.761Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com/59047b4e-5051-4221-a123-c0d2683278f3.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 20 (2nd Gen) function chat(us-central1)... 
+[debug] [2025-01-04T02:43:24.764Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions functionId=chat
+[debug] [2025-01-04T02:43:24.764Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions {"name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com","object":"59047b4e-5051-4221-a123-c0d2683278f3.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","deployment-callable":"true","firebase-functions-hash":"c21eaa10961d05776f5e7dd44cf738a652936d26"}}
+[debug] [2025-01-04T02:43:26.625Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions 200
+[debug] [2025-01-04T02:43:26.626Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:43:29.814586246Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"create","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2025-01-04T02:43:26.626Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d [none]
+[debug] [2025-01-04T02:43:27.297Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d 200
+[debug] [2025-01-04T02:43:27.297Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:43:29.814586246Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958609530335"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","deployment-callable":"true","firebase-functions-hash":"c21eaa10961d05776f5e7dd44cf738a652936d26"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2025-01-04T02:43:27.798Z] [create-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:43:27.798Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d [none]
+[debug] [2025-01-04T02:43:28.467Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d 200
+[debug] [2025-01-04T02:43:28.467Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:43:29.814586246Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958609530335"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","deployment-callable":"true","firebase-functions-hash":"c21eaa10961d05776f5e7dd44cf738a652936d26"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2025-01-04T02:43:29.468Z] [create-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:43:29.469Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d [none]
+[debug] [2025-01-04T02:43:30.137Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d 200
+[debug] [2025-01-04T02:43:30.137Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:43:29.814586246Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958609530335"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","deployment-callable":"true","firebase-functions-hash":"c21eaa10961d05776f5e7dd44cf738a652936d26"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2025-01-04T02:43:32.139Z] [create-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:43:32.140Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d [none]
+[debug] [2025-01-04T02:43:32.293Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d 200
+[debug] [2025-01-04T02:43:32.293Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:43:29.814586246Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958609530335"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","deployment-callable":"true","firebase-functions-hash":"c21eaa10961d05776f5e7dd44cf738a652936d26"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2025-01-04T02:43:36.296Z] [create-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:43:36.296Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d [none]
+[debug] [2025-01-04T02:43:36.976Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d 200
+[debug] [2025-01-04T02:43:36.977Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958608697-62ad85c375a36-80aad103-f329f12d","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:43:29.814586246Z","endTime":"2025-01-04T02:43:38.705074587Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958609530335"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","deployment-callable":"true","firebase-functions-hash":"c21eaa10961d05776f5e7dd44cf738a652936d26"},"environment":"GEN_2"},"stages":[{"name":"ARTIFACT_REGISTRY","message":"Deleting function artifacts in Artifact Registry","state":"COMPLETE"},{"name":"SERVICE","message":"Deleting Cloud Run service","state":"COMPLETE","resource":"projects/therapy-bot-6dad7/locations/us-central1/services/chat"}],"operationType":"CREATE_FUNCTION"},"done":true,"error":{"code":3,"message":"Create repository operation for projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts has failed. Additional information: Request contains an invalid argument."}}
+[debug] [2025-01-04T02:43:36.977Z] Got source token undefined for region us-central1
+[error] Create repository operation for projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts has failed. Additional information: Request contains an invalid argument.
+[debug] [2025-01-04T02:43:36.978Z] Total Function Deployment time: 12215
+[debug] [2025-01-04T02:43:36.978Z] 1 Functions Deployed
+[debug] [2025-01-04T02:43:36.978Z] 1 Functions Errored
+[debug] [2025-01-04T02:43:36.978Z] 0 Function Deployments Aborted
+[debug] [2025-01-04T02:43:36.978Z] Average Function Deployment time: 12214
+[info] 
+[info] Functions deploy had errors with the following functions:
+	chat(us-central1)
+[info] i  functions: cleaning up build files... 
+[debug] [2025-01-04T02:43:36.979Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts/packages/chat [none]
+[debug] [2025-01-04T02:43:36.979Z] >>> [apiv2][query] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list [none]
+[debug] [2025-01-04T02:43:37.698Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts/packages/chat 404
+[debug] [2025-01-04T02:43:37.698Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts/packages/chat {"error":{"code":404,"message":"Package \"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts/packages/chat\" was not found.","status":"NOT_FOUND"}}
+[debug] [2025-01-04T02:43:38.371Z] <<< [apiv2][status] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list 404
+[debug] [2025-01-04T02:43:38.371Z] <<< [apiv2][body] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2025-01-04T02:43:38.371Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2025-01-04T02:43:38.373Z] >>> [apiv2][query] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list [none]
+[debug] [2025-01-04T02:43:38.647Z] <<< [apiv2][status] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list 404
+[debug] [2025-01-04T02:43:38.647Z] <<< [apiv2][body] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2025-01-04T02:43:38.647Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2025-01-04T02:43:38.748Z] >>> [apiv2][query] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list [none]
+[debug] [2025-01-04T02:43:38.960Z] <<< [apiv2][status] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list 404
+[debug] [2025-01-04T02:43:38.961Z] <<< [apiv2][body] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2025-01-04T02:43:38.961Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[warn] ⚠  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/gcr/images/therapy-bot-6dad7/us/gcf 
+[debug] [2025-01-04T02:43:38.961Z] Functions deploy failed.
+[debug] [2025-01-04T02:43:38.961Z] {
+  "endpoint": {
+    "id": "chat",
+    "project": "therapy-bot-6dad7",
+    "region": "us-central1",
+    "entryPoint": "chat",
+    "platform": "gcfv2",
+    "runtime": "nodejs20",
+    "callableTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "OPENAI_API_KEY": "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",
+      "NODE_ENV": "production",
+      "FIREBASE_CONFIG": "{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}",
+      "GCLOUD_PROJECT": "therapy-bot-6dad7",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/therapy-bot-6dad7/locations/us-central1/services/chat"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "c21eaa10961d05776f5e7dd44cf738a652936d26"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Create repository operation for projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts has failed. Additional information: Request contains an invalid argument.",
+    "original": {
+      "code": 3,
+      "message": "Create repository operation for projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts has failed. Additional information: Request contains an invalid argument."
+    },
+    "status": 3,
+    "code": 3
+  }
+}
+[debug] [2025-01-04T02:43:38.962Z] Error: Failed to create function chat in region us-central1
+    at /home/ben/.nvm/versions/node/v20.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:294:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.createV2Function (/home/ben/.nvm/versions/node/v20.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:278:30)
+    at async Fabricator.createEndpoint (/home/ben/.nvm/versions/node/v20.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:137:13)
+    at async handle (/home/ben/.nvm/versions/node/v20.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:89:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2025-01-04T02:45:10.394Z] ----------------------------------------------------------------------
+[debug] [2025-01-04T02:45:10.396Z] Command:       /home/ben/.nvm/versions/node/v20.17.0/bin/node /home/ben/.nvm/versions/node/v20.17.0/bin/firebase deploy --only functions
+[debug] [2025-01-04T02:45:10.396Z] CLI Version:   13.18.0
+[debug] [2025-01-04T02:45:10.396Z] Platform:      linux
+[debug] [2025-01-04T02:45:10.396Z] Node Version:  v20.17.0
+[debug] [2025-01-04T02:45:10.397Z] Time:          Sat Jan 04 2025 02:45:10 GMT+0000 (Greenwich Mean Time)
+[debug] [2025-01-04T02:45:10.397Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-04T02:45:10.447Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-04T02:45:10.447Z] > authorizing via signed-in user (brunyeeb@gmail.com)
+[debug] [2025-01-04T02:45:10.448Z] [iam] checking project therapy-bot-6dad7 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-01-04T02:45:10.449Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions [none]
+[debug] [2025-01-04T02:45:10.449Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:45:10.449Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-01-04T02:45:11.041Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions 200
+[debug] [2025-01-04T02:45:11.041Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-01-04T02:45:11.042Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-01-04T02:45:11.042Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-01-04T02:45:11.623Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-01-04T02:45:11.624Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'therapy-bot-6dad7'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2025-01-04T02:45:14.366Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 [none]
+[debug] [2025-01-04T02:45:14.566Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 200
+[debug] [2025-01-04T02:45:14.566Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 {"projectId":"therapy-bot-6dad7","projectNumber":"1045420805272","displayName":"therapy-bot","name":"projects/therapy-bot-6dad7","resources":{"hostingSite":"therapy-bot-6dad7"},"state":"ACTIVE","etag":"1_76ac9ce2-a710-40ae-9191-62ab01989519"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-01-04T02:45:14.567Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-01-04T02:45:14.567Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:45:14.568Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-01-04T02:45:14.568Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:45:14.569Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com [none]
+[debug] [2025-01-04T02:45:14.569Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:45:14.569Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com [none]
+[debug] [2025-01-04T02:45:14.570Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:45:15.312Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com 200
+[debug] [2025-01-04T02:45:15.312Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-01-04T02:45:15.322Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com 200
+[debug] [2025-01-04T02:45:15.322Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2025-01-04T02:45:15.323Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com 200
+[debug] [2025-01-04T02:45:15.323Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2025-01-04T02:45:15.333Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com 200
+[debug] [2025-01-04T02:45:15.333Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-01-04T02:45:15.333Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7/adminSdkConfig [none]
+[debug] [2025-01-04T02:45:15.536Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7/adminSdkConfig 200
+[debug] [2025-01-04T02:45:15.536Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7/adminSdkConfig {"projectId":"therapy-bot-6dad7","storageBucket":"therapy-bot-6dad7.firebasestorage.app"}
+[debug] [2025-01-04T02:45:15.536Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/therapy-bot-6dad7/configs [none]
+[debug] [2025-01-04T02:45:15.746Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/therapy-bot-6dad7/configs 200
+[debug] [2025-01-04T02:45:15.746Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/therapy-bot-6dad7/configs {}
+[debug] [2025-01-04T02:45:15.747Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-01-04T02:45:16.080Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0",
+    "openai": "^4.77.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2025-01-04T02:45:16.080Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-01-04T02:45:16.081Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-01-04T02:45:16.085Z] Found firebase-functions binary at '/home/ben/projects/ai-therapy/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8160
+
+[debug] [2025-01-04T02:45:16.247Z] Got response from /__/functions.yaml {"endpoints":{"chat":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":1,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","cpu":1,"labels":{},"callableTrigger":{},"entryPoint":"chat"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{},"params":[{"name":"OPENAI_API_KEY","type":"string"},{"name":"NODE_ENV","type":"string"}]}
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /home/ben/projects/ai-therapy/functions (204.84 KB) for uploading 
+[debug] [2025-01-04T02:45:21.303Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/therapy-bot-6dad7/locations/-/functions [none]
+[debug] [2025-01-04T02:45:21.804Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/therapy-bot-6dad7/locations/-/functions 200
+[debug] [2025-01-04T02:45:21.805Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/therapy-bot-6dad7/locations/-/functions {}
+[debug] [2025-01-04T02:45:21.806Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2025-01-04T02:45:22.746Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/-/functions 200
+[debug] [2025-01-04T02:45:22.746Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/-/functions {"functions":[{"name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958609530335"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"state":"FAILED","updateTime":"2025-01-04T02:43:38.714645247Z","labels":{"deployment-tool":"cli-firebase","deployment-callable":"true","firebase-functions-hash":"c21eaa10961d05776f5e7dd44cf738a652936d26"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat","createTime":"2025-01-04T02:43:29.809783859Z"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2025-01-04T02:45:22.748Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com [none]
+[debug] [2025-01-04T02:45:22.748Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:45:22.749Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com [none]
+[debug] [2025-01-04T02:45:22.749Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:45:22.750Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/pubsub.googleapis.com [none]
+[debug] [2025-01-04T02:45:22.750Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/pubsub.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:45:22.751Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/storage.googleapis.com [none]
+[debug] [2025-01-04T02:45:22.751Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/storage.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:45:23.499Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com 200
+[debug] [2025-01-04T02:45:23.500Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com [omitted]
+[info] ✔  functions: required API run.googleapis.com is enabled 
+[debug] [2025-01-04T02:45:23.502Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/pubsub.googleapis.com 200
+[debug] [2025-01-04T02:45:23.502Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/pubsub.googleapis.com [omitted]
+[info] ✔  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2025-01-04T02:45:23.503Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com 200
+[debug] [2025-01-04T02:45:23.503Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com [omitted]
+[info] ✔  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2025-01-04T02:45:23.506Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/storage.googleapis.com 200
+[debug] [2025-01-04T02:45:23.506Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/storage.googleapis.com [omitted]
+[info] ✔  functions: required API storage.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2025-01-04T02:45:23.507Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2025-01-04T02:45:23.507Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2025-01-04T02:45:23.960Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2025-01-04T02:45:23.960Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-1045420805272@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"111899996285342541934"}}
+[debug] [2025-01-04T02:45:24.393Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2025-01-04T02:45:24.393Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/1045420805272/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-1045420805272@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"117875806513462077794"}}
+[warn] ⚠  functions: The following functions have reserved minimum instances. This will reduce the frequency of cold starts but increases the minimum cost. You will be charged for the memory allocation and a fraction of the CPU allocation of instances while they are idle.
+
+	chat(us-central1): 1 instances, 256MB of memory each
+
+With these options, your minimum bill will be $2.88 in a 30-day month 
+[debug] [2025-01-04T02:45:36.044Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 [none]
+[debug] [2025-01-04T02:45:36.239Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 200
+[debug] [2025-01-04T02:45:36.239Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 {"projectId":"therapy-bot-6dad7","projectNumber":"1045420805272","displayName":"therapy-bot","name":"projects/therapy-bot-6dad7","resources":{"hostingSite":"therapy-bot-6dad7"},"state":"ACTIVE","etag":"1_76ac9ce2-a710-40ae-9191-62ab01989519"}
+[debug] [2025-01-04T02:45:36.240Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2025-01-04T02:45:37.054Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2025-01-04T02:45:37.054Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com/14c3143b-7aed-4f63-923a-285260c9d887.zip?GoogleAccessId=service-1045420805272@gcf-admin-robot.iam.gserviceaccount.com&Expires=1735960540&Signature=UD9q80gnbeIJO%2Bs7TNa%2F4gPGNfmab6bUKEX5HNGNpzOOyCWzGpKN6lvd9oESLU3OWoP7dBMVnKxw4DZ7ngZaw3M74OBZE9tjBLVS7qVgoxYMPIzlapKb43Ot2RuqI%2F2q%2FvwJq7cobwAvB2YdfYZCkstsNZ42ycN%2BEdjaDGAOCqU2CwOA3LcuV35Zk00%2B75S9gepidxYE6crRcrlkDir4C%2FxslYmrOfdBCyJ%2BydSaZ0qUYPGwqRQz2AQ8AIKOgrtCWidhwtF2lc7tALyi5ytImyOWr2O5WLHfzHHvYMJH%2BvaPTcvQayj%2BTv7Q0flJjHp47e178oIqYzdH%2F2F8e9Ca0A%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com","object":"14c3143b-7aed-4f63-923a-285260c9d887.zip"}}
+[debug] [2025-01-04T02:45:37.054Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com/14c3143b-7aed-4f63-923a-285260c9d887.zip GoogleAccessId=service-1045420805272%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1735960540&Signature=UD9q80gnbeIJO%2Bs7TNa%2F4gPGNfmab6bUKEX5HNGNpzOOyCWzGpKN6lvd9oESLU3OWoP7dBMVnKxw4DZ7ngZaw3M74OBZE9tjBLVS7qVgoxYMPIzlapKb43Ot2RuqI%2F2q%2FvwJq7cobwAvB2YdfYZCkstsNZ42ycN%2BEdjaDGAOCqU2CwOA3LcuV35Zk00%2B75S9gepidxYE6crRcrlkDir4C%2FxslYmrOfdBCyJ%2BydSaZ0qUYPGwqRQz2AQ8AIKOgrtCWidhwtF2lc7tALyi5ytImyOWr2O5WLHfzHHvYMJH%2BvaPTcvQayj%2BTv7Q0flJjHp47e178oIqYzdH%2F2F8e9Ca0A%3D%3D
+[debug] [2025-01-04T02:45:37.055Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com/14c3143b-7aed-4f63-923a-285260c9d887.zip [stream]
+[debug] [2025-01-04T02:45:37.704Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com/14c3143b-7aed-4f63-923a-285260c9d887.zip 200
+[debug] [2025-01-04T02:45:37.704Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com/14c3143b-7aed-4f63-923a-285260c9d887.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: updating Node.js 20 (2nd Gen) function chat(us-central1)... 
+[debug] [2025-01-04T02:45:37.707Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions/chat updateMask=name%2CbuildConfig.runtime%2CbuildConfig.entryPoint%2CbuildConfig.source.storageSource.bucket%2CbuildConfig.source.storageSource.object%2CbuildConfig.environmentVariables%2CbuildConfig.sourceToken%2CserviceConfig.environmentVariables%2CserviceConfig.ingressSettings%2CserviceConfig.timeoutSeconds%2CserviceConfig.serviceAccountEmail%2CserviceConfig.availableMemory%2CserviceConfig.minInstanceCount%2CserviceConfig.maxInstanceCount%2CserviceConfig.maxInstanceRequestConcurrency%2CserviceConfig.availableCpu%2CserviceConfig.vpcConnector%2CserviceConfig.vpcConnectorEgressSettings%2Clabels%2CbuildConfig.buildEnvironmentVariables
+[debug] [2025-01-04T02:45:37.707Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions/chat {"name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-uploads-1045420805272.us-central1.cloudfunctions.appspot.com","object":"14c3143b-7aed-4f63-923a-285260c9d887.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":1,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"}}
+[debug] [2025-01-04T02:45:39.041Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions/chat 200
+[debug] [2025-01-04T02:45:39.041Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/functions/chat {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2025-01-04T02:45:39.041Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c [none]
+[debug] [2025-01-04T02:45:39.713Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c 200
+[debug] [2025-01-04T02:45:39.713Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958742235510"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","minInstanceCount":1,"availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":false}
+[debug] [2025-01-04T02:45:40.215Z] [update-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:45:40.215Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c [none]
+[debug] [2025-01-04T02:45:40.889Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c 200
+[debug] [2025-01-04T02:45:40.889Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958742235510"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","minInstanceCount":1,"availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed"},"done":false}
+[debug] [2025-01-04T02:45:41.890Z] [update-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:45:41.890Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c [none]
+[debug] [2025-01-04T02:45:42.560Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c 200
+[debug] [2025-01-04T02:45:42.560Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958742235510"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","minInstanceCount":1,"availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed"},"done":false}
+[debug] [2025-01-04T02:45:44.562Z] [update-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:45:44.562Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c [none]
+[debug] [2025-01-04T02:45:45.250Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c 200
+[debug] [2025-01-04T02:45:45.250Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958742235510"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","minInstanceCount":1,"availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed"},"done":false}
+[debug] [2025-01-04T02:45:49.252Z] [update-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:45:49.253Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c [none]
+[debug] [2025-01-04T02:45:49.910Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c 200
+[debug] [2025-01-04T02:45:49.910Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958742235510"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","minInstanceCount":1,"availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed"},"done":false}
+[debug] [2025-01-04T02:45:57.910Z] [update-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:45:57.910Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c [none]
+[debug] [2025-01-04T02:45:58.581Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c 200
+[debug] [2025-01-04T02:45:58.581Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958742235510"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","minInstanceCount":1,"availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed"},"done":false}
+[debug] [2025-01-04T02:46:08.586Z] [update-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:46:08.587Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c [none]
+[debug] [2025-01-04T02:46:09.265Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c 200
+[debug] [2025-01-04T02:46:09.265Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958742235510"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","minInstanceCount":1,"availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed"},"done":false}
+[debug] [2025-01-04T02:46:19.271Z] [update-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:46:19.271Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c [none]
+[debug] [2025-01-04T02:46:19.967Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c 200
+[debug] [2025-01-04T02:46:19.968Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958742235510"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","minInstanceCount":1,"availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed"},"done":false}
+[debug] [2025-01-04T02:46:29.972Z] [update-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:46:29.973Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c [none]
+[debug] [2025-01-04T02:46:30.673Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c 200
+[debug] [2025-01-04T02:46:30.673Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958742235510"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","minInstanceCount":1,"availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/1045420805272/locations/us-central1/builds/4b1fea86-9be0-43c2-b185-a36e8a4184ed"},"done":false}
+[debug] [2025-01-04T02:46:40.678Z] [update-default-us-central1-chat] Retrying task index 0
+[debug] [2025-01-04T02:46:40.678Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c [none]
+[debug] [2025-01-04T02:46:41.367Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c 200
+[debug] [2025-01-04T02:46:41.368Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c {"name":"projects/therapy-bot-6dad7/locations/us-central1/operations/operation-1735958741645-62ad86423f8cb-296a718d-89a0022c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-01-04T02:45:42.280484704Z","endTime":"2025-01-04T02:46:35.478234449Z","target":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958742235510"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","timeoutSeconds":60,"environmentVariables":{"OPENAI_API_KEY":"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","NODE_ENV":"production","FIREBASE_CONFIG":"{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}","GCLOUD_PROJECT":"therapy-bot-6dad7","EVENTARC_CLOUD_EVENT_SOURCE":"projects/therapy-bot-6dad7/locations/us-central1/services/chat","FUNCTION_TARGET":"chat","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1045420805272-compute@developer.gserviceaccount.com","minInstanceCount":1,"availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat"},"stages":[{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":true,"error":{"code":13,"message":"Build failed with status: FAILURE and message: yarn run v1.22.22\nerror Command \"plugin\" not found.\ninfo Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272."}}
+[debug] [2025-01-04T02:46:41.368Z] Got source token undefined for region us-central1
+[error] Build failed with status: FAILURE and message: yarn run v1.22.22
+error Command "plugin" not found.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272.
+[debug] [2025-01-04T02:46:41.369Z] Total Function Deployment time: 63662
+[debug] [2025-01-04T02:46:41.369Z] 1 Functions Deployed
+[debug] [2025-01-04T02:46:41.369Z] 1 Functions Errored
+[debug] [2025-01-04T02:46:41.369Z] 0 Function Deployments Aborted
+[debug] [2025-01-04T02:46:41.369Z] Average Function Deployment time: 63662
+[info] 
+[info] Functions deploy had errors with the following functions:
+	chat(us-central1)
+[info] i  functions: cleaning up build files... 
+[debug] [2025-01-04T02:46:41.370Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts/packages/chat [none]
+[debug] [2025-01-04T02:46:41.371Z] >>> [apiv2][query] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list [none]
+[debug] [2025-01-04T02:46:41.607Z] <<< [apiv2][status] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list 404
+[debug] [2025-01-04T02:46:41.607Z] <<< [apiv2][body] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2025-01-04T02:46:41.608Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2025-01-04T02:46:41.609Z] >>> [apiv2][query] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list [none]
+[debug] [2025-01-04T02:46:41.835Z] <<< [apiv2][status] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list 404
+[debug] [2025-01-04T02:46:41.835Z] <<< [apiv2][body] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2025-01-04T02:46:41.835Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2025-01-04T02:46:41.936Z] >>> [apiv2][query] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list [none]
+[debug] [2025-01-04T02:46:42.062Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts/packages/chat 404
+[debug] [2025-01-04T02:46:42.062Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts/packages/chat {"error":{"code":404,"message":"Package \"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts/packages/chat\" was not found.","status":"NOT_FOUND"}}
+[debug] [2025-01-04T02:46:42.133Z] <<< [apiv2][status] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list 404
+[debug] [2025-01-04T02:46:42.133Z] <<< [apiv2][body] GET https://us.gcr.io/v2/therapy-bot-6dad7/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2025-01-04T02:46:42.133Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[warn] ⚠  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/gcr/images/therapy-bot-6dad7/us/gcf 
+[debug] [2025-01-04T02:46:42.133Z] Functions deploy failed.
+[debug] [2025-01-04T02:46:42.133Z] {
+  "endpoint": {
+    "id": "chat",
+    "project": "therapy-bot-6dad7",
+    "region": "us-central1",
+    "entryPoint": "chat",
+    "platform": "gcfv2",
+    "runtime": "nodejs20",
+    "callableTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": 1,
+    "concurrency": 80,
+    "cpu": 1,
+    "vpc": null,
+    "environmentVariables": {
+      "OPENAI_API_KEY": "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",
+      "NODE_ENV": "production",
+      "FIREBASE_CONFIG": "{\"projectId\":\"therapy-bot-6dad7\",\"storageBucket\":\"therapy-bot-6dad7.firebasestorage.app\"}",
+      "GCLOUD_PROJECT": "therapy-bot-6dad7",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/therapy-bot-6dad7/locations/us-central1/services/chat"
+    },
+    "codebase": "default",
+    "securityLevel": "SECURE_ALWAYS",
+    "targetedByOnly": false,
+    "hash": "79a15c21a9a28dde612a33e1bf9e2482b3c170f5"
+  },
+  "op": "update",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Build failed with status: FAILURE and message: yarn run v1.22.22\nerror Command \"plugin\" not found.\ninfo Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272.",
+    "original": {
+      "code": 13,
+      "message": "Build failed with status: FAILURE and message: yarn run v1.22.22\nerror Command \"plugin\" not found.\ninfo Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/4b1fea86-9be0-43c2-b185-a36e8a4184ed?project=1045420805272."
+    },
+    "status": 13,
+    "code": 13
+  }
+}
+[debug] [2025-01-04T02:46:42.134Z] Error: Failed to update function chat in region us-central1
+    at /home/ben/.nvm/versions/node/v20.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:399:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.updateV2Function (/home/ben/.nvm/versions/node/v20.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:388:32)
+    at async Fabricator.updateEndpoint (/home/ben/.nvm/versions/node/v20.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:155:13)
+    at async handle (/home/ben/.nvm/versions/node/v20.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:89:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2025-01-04T02:47:12.238Z] ----------------------------------------------------------------------
+[debug] [2025-01-04T02:47:12.240Z] Command:       /home/ben/.nvm/versions/node/v20.17.0/bin/node /home/ben/.nvm/versions/node/v20.17.0/bin/firebase deploy --only functions
+[debug] [2025-01-04T02:47:12.240Z] CLI Version:   13.18.0
+[debug] [2025-01-04T02:47:12.240Z] Platform:      linux
+[debug] [2025-01-04T02:47:12.241Z] Node Version:  v20.17.0
+[debug] [2025-01-04T02:47:12.241Z] Time:          Sat Jan 04 2025 02:47:12 GMT+0000 (Greenwich Mean Time)
+[debug] [2025-01-04T02:47:12.241Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-04T02:47:12.285Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-04T02:47:12.285Z] > authorizing via signed-in user (brunyeeb@gmail.com)
+[debug] [2025-01-04T02:47:12.285Z] [iam] checking project therapy-bot-6dad7 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-01-04T02:47:12.287Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions [none]
+[debug] [2025-01-04T02:47:12.287Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:47:12.287Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-01-04T02:47:12.458Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions 200
+[debug] [2025-01-04T02:47:12.458Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/therapy-bot-6dad7:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-01-04T02:47:12.458Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-01-04T02:47:12.459Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-01-04T02:47:13.022Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-01-04T02:47:13.022Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/therapy-bot-6dad7/serviceAccounts/therapy-bot-6dad7@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'therapy-bot-6dad7'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2025-01-04T02:47:15.686Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 [none]
+[debug] [2025-01-04T02:47:15.887Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 200
+[debug] [2025-01-04T02:47:15.887Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7 {"projectId":"therapy-bot-6dad7","projectNumber":"1045420805272","displayName":"therapy-bot","name":"projects/therapy-bot-6dad7","resources":{"hostingSite":"therapy-bot-6dad7"},"state":"ACTIVE","etag":"1_76ac9ce2-a710-40ae-9191-62ab01989519"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-01-04T02:47:15.888Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-01-04T02:47:15.888Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:47:15.889Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-01-04T02:47:15.889Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:47:15.890Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com [none]
+[debug] [2025-01-04T02:47:15.890Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:47:15.891Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com [none]
+[debug] [2025-01-04T02:47:15.891Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:47:16.639Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com 200
+[debug] [2025-01-04T02:47:16.639Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-01-04T02:47:16.645Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com 200
+[debug] [2025-01-04T02:47:16.645Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-01-04T02:47:16.645Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com 200
+[debug] [2025-01-04T02:47:16.646Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2025-01-04T02:47:16.646Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com 200
+[debug] [2025-01-04T02:47:16.647Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2025-01-04T02:47:16.647Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7/adminSdkConfig [none]
+[debug] [2025-01-04T02:47:16.840Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7/adminSdkConfig 200
+[debug] [2025-01-04T02:47:16.840Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/therapy-bot-6dad7/adminSdkConfig {"projectId":"therapy-bot-6dad7","storageBucket":"therapy-bot-6dad7.firebasestorage.app"}
+[debug] [2025-01-04T02:47:16.841Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/therapy-bot-6dad7/configs [none]
+[debug] [2025-01-04T02:47:17.044Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/therapy-bot-6dad7/configs 200
+[debug] [2025-01-04T02:47:17.044Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/therapy-bot-6dad7/configs {}
+[debug] [2025-01-04T02:47:17.045Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-01-04T02:47:17.379Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0",
+    "openai": "^4.77.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2025-01-04T02:47:17.379Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-01-04T02:47:17.380Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-01-04T02:47:17.384Z] Found firebase-functions binary at '/home/ben/projects/ai-therapy/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8735
+
+[debug] [2025-01-04T02:47:17.560Z] Got response from /__/functions.yaml {"endpoints":{"chat":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":1,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","cpu":1,"labels":{},"callableTrigger":{},"entryPoint":"chat"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{},"params":[{"name":"OPENAI_API_KEY","type":"string"},{"name":"NODE_ENV","type":"string"}]}
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /home/ben/projects/ai-therapy/functions (204.84 KB) for uploading 
+[debug] [2025-01-04T02:47:22.608Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/therapy-bot-6dad7/locations/-/functions [none]
+[debug] [2025-01-04T02:47:23.120Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/therapy-bot-6dad7/locations/-/functions 200
+[debug] [2025-01-04T02:47:23.120Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/therapy-bot-6dad7/locations/-/functions {}
+[debug] [2025-01-04T02:47:23.120Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2025-01-04T02:47:24.039Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/-/functions 200
+[debug] [2025-01-04T02:47:24.039Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/therapy-bot-6dad7/locations/-/functions {"functions":[{"name":"projects/therapy-bot-6dad7/locations/us-central1/functions/chat","buildConfig":{"runtime":"nodejs20","entryPoint":"chat","source":{"storageSource":{"bucket":"gcf-v2-sources-1045420805272-us-central1","object":"chat/function-source.zip","generation":"1735958609530335"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/therapy-bot-6dad7/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/therapy-bot-6dad7/serviceAccounts/1045420805272-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"state":"UNKNOWN","updateTime":"2025-01-04T02:46:35.485096394Z","labels":{"deployment-tool":"cli-firebase","deployment-callable":"true","firebase-functions-hash":"79a15c21a9a28dde612a33e1bf9e2482b3c170f5"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/therapy-bot-6dad7/locations/us-central1/services/chat for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-therapy-bot-6dad7.cloudfunctions.net/chat","createTime":"2025-01-04T02:43:29.809783859Z"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2025-01-04T02:47:24.041Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com [none]
+[debug] [2025-01-04T02:47:24.041Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/run.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:47:24.043Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com [none]
+[debug] [2025-01-04T02:47:24.043Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/eventarc.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:47:24.044Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/pubsub.googleapis.com [none]
+[debug] [2025-01-04T02:47:24.044Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/pubsub.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
+[debug] [2025-01-04T02:47:24.045Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/storage.googleapis.com [none]
+[debug] [2025-01-04T02:47:24.045Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/therapy-bot-6dad7/services/storage.googleapis.com x-goog-quota-user=projects/therapy-bot-6dad7
