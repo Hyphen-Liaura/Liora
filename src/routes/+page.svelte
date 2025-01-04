@@ -112,15 +112,15 @@
 {/if}
 
 <div class="flex h-full max-h-screen flex-col items-center pt-24">
-	<div class="fixed right-16 top-12 flex items-center gap-x-8">
+	<div class="top fixed right-4 top-4 flex items-center gap-x-8 md:right-16 md:top-12">
 		<a href="https://github.com/Hyphen-Liora/Liora" target="_blank">
-			<img src="/github.png" alt="GitHub" class="h-16 w-auto" />
+			<img src="/github.png" alt="GitHub" class="h-8 w-auto md:h-16" />
 		</a>
 		<a href="https://x.com/AgentLiora" target="_blank">
-			<img src="/twitter.png" alt="X" class="h-16 w-auto" />
+			<img src="/twitter.png" alt="X" class="h-8 w-auto md:h-16" />
 		</a>
 		<a href="" target="_blank">
-			<img src="/pump.png" alt="Pump" class="h-16 w-auto" />
+			<img src="/pump.png" alt="Pump" class="h-8 w-auto md:h-16" />
 		</a>
 	</div>
 
@@ -134,9 +134,13 @@
 	<div class="min-h-0 w-full max-w-6xl flex-1 px-10 pb-10">
 		<form
 			onsubmit={sendMessage}
-			class="relative grid h-full grid-cols-2 rounded-md border border-gray-300 pr-4"
+			class="relative grid h-full rounded-md border border-gray-300 pr-4 max-md:pl-4 md:grid-cols-2"
 		>
-			<img src="/character.png" alt="Liora" class="h-auto w-full max-w-2xl select-none self-end" />
+			<img
+				src="/character.png"
+				alt="Liora"
+				class="h-auto w-full max-w-2xl select-none self-end max-md:absolute max-md:opacity-15 md:block"
+			/>
 
 			<div class="grid min-h-0 grid-rows-[1fr_auto] pb-4">
 				<div
