@@ -14,7 +14,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
-		"deploy": "firebase deploy --only hosting,functions"
+		"deploy": "npm run build && firebase deploy --only hosting,functions"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.6",
