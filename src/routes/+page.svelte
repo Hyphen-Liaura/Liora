@@ -113,7 +113,10 @@
 
 <div class="flex h-full max-h-screen flex-col items-center pt-24">
 	<div class="fixed right-16 top-12 flex items-center gap-x-8">
-		<a href="" target="_blank">
+		<a href="https://github.com/Hyphen-Liora/Liora" target="_blank">
+			<img src="/github.png" alt="GitHub" class="h-16 w-auto" />
+		</a>
+		<a href="https://x.com/AgentLiora" target="_blank">
 			<img src="/twitter.png" alt="X" class="h-16 w-auto" />
 		</a>
 		<a href="" target="_blank">
