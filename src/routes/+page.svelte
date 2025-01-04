@@ -51,7 +51,7 @@
 			return;
 		}
 
-		if (messages.length > 50) {
+		if (messages.length > 50 && import.meta.env.PROD) {
 			error = 'You have reached the message limit.';
 			hitLimit?.set(true);
 			focusInput();
@@ -108,6 +108,15 @@
 {/if}
 
 <div class="flex h-full max-h-screen flex-col items-center pt-24">
+	<div class="fixed right-16 top-12 flex items-center gap-x-8">
+		<a href="" target="_blank">
+			<img src="/twitter.png" alt="X" class="h-16 w-auto" />
+		</a>
+		<a href="" target="_blank">
+			<img src="/pump.png" alt="Pump" class="h-16 w-auto" />
+		</a>
+	</div>
+
 	<Heading class="mb-4 text-center tracking-tighter  max-sm:text-3xl">
 		Your AI-Powered Emotional<br />
 		Support & Trading Companion
@@ -120,21 +129,13 @@
 			onsubmit={sendMessage}
 			class="relative grid h-full grid-cols-2 rounded-md border border-gray-300 pr-4"
 		>
-			<img src="/character.png" alt="Liora" class="h-auto w-full max-w-2xl self-end" />
+			<img src="/character.png" alt="Liora" class="h-auto w-full max-w-2xl select-none self-end" />
 
 			<div class="grid min-h-0 grid-rows-[1fr_auto] pb-4">
 				<div
 					bind:this={messageContainer}
 					class="no-scrollbar relative flex w-full scroll-mb-4 scroll-mt-24 flex-col gap-y-2 overflow-y-auto overflow-x-hidden pb-4 pt-32"
 				>
-					<div class="absolute right-2 top-2">
-						<div class="fixed -translate-x-full translate-y-1/2">
-							<a href="" target="_blank"> [X] </a>
-							<a href="" target="_blank"> [Chart] </a>
-							<a href="" target="_blank"> [Buy] </a>
-						</div>
-					</div>
-
 					{#each messages as message}
 						<Message message={message.content} role={message.role} />
 					{/each}

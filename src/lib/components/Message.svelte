@@ -19,7 +19,7 @@
 	class={cn(
 		'w-fit max-w-[80%] rounded-lg px-4 py-3 font-bold',
 		role === 'assistant' && 'background self-start text-left',
-		role === 'user' && 'self-end bg-neutral-50 text-right'
+		role === 'user' && 'self-end bg-neutral-100 text-right'
 	)}
 >
 	<P>{message}</P>
